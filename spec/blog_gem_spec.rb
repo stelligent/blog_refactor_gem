@@ -1,8 +1,8 @@
 require 'spec_helper'
 
-describe BlogGem do
+describe BlogRefactorGem do
   it 'has a version number' do
-    expect(BlogGem::VERSION).not_to be nil
+    expect(BlogRefactorGem::VERSION).not_to be nil
   end
 
   it 'does something useful' do

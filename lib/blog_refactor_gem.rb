@@ -1,5 +1,5 @@
 require "blog_refactor_gem/version"
 
-module BlogGem
+module BlogRefactorGem
   # Your code goes here...
 end
