@@ -9,9 +9,9 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Jeffrey Dugas"]
   spec.email         = ["jedugas@gmail.com"]
 
-  spec.summary       = %q{TODO: Write a short summary, because Rubygems requires one.}
-  spec.description   = %q{TODO: Write a longer description or delete this line.}
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.summary       = %q{Accompanies Stelligent blog posts.}
+  spec.description   = %q{Used by blog_refactor_php and blog_refactor_nodejs for phase2 blog post.}
+  spec.homepage      = "https://github.com/stelligent/blog_refactor_gem"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
