@@ -1,6 +1,6 @@
 # This is an exceptionally cheesy pipeline-store / param-store
 # It emulates a pipeline-scoped persistence store.
-module BlogGem
+module BlogRefactorGem
   class PipelineStoreEmulator
     require 'json'
 
