@@ -25,7 +25,7 @@ Gem::Specification.new do |spec|
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
   spec.bindir        = "exe"
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
-  spec.require_paths = ["lib", "tasks", "steps", "store"]
+  spec.require_paths = ["lib", "lib/tasks", "lib/steps", "lib/store"]
 
   spec.add_runtime_dependency "rake", "~> 10.0"
 
