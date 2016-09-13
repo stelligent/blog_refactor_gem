@@ -5,7 +5,7 @@ require 'blog_refactor_gem/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "blog_refactor_gem"
-  spec.version       = BlogGem::VERSION
+  spec.version       = BlogRefactorGem::VERSION
   spec.authors       = ["Jeffrey Dugas"]
   spec.email         = ["jedugas@gmail.com"]
 

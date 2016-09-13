@@ -1,3 +1,3 @@
-module BlogGem
+module BlogRefactorGem
   VERSION = "0.1.0"
 end
