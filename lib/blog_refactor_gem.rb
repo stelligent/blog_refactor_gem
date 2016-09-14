@@ -1,5 +1,3 @@
-require "blog_refactor_gem/version"
-
-module BlogRefactorGem
-  # Your code goes here...
-end
+require 'blog_refactor_gem/version'
+require 'steps/all_steps'
+require 'store/pipeline_store_emulator'
