@@ -27,13 +27,13 @@ end
     # instantiate worker (with store instance)
     Object::const_get(class_ref).new(store: @store)
 
-    # TODO: fix me
-    # tasks write log messages to the store, which is hooked up via 'enhance'
-    Rake::Task['pipeline:build:' + t[:name]].enhance do |e|
-      tasks = @store.get(attrib_name: 'tasks_executed')
-      @store.put(attrib_name: 'tasks_executed', value: (tasks.nil? ? [] : tasks) << { name: e.name, time: Time.now.strftime('%c') })
-      @store.save
-    end
+    # # TODO: fix me
+    # # tasks write log messages to the store, which is hooked up via 'enhance'
+    # Rake::Task[task_sym.to_s].enhance do |e|
+    #   tasks = @store.get(attrib_name: 'tasks_executed')
+    #   @store.put(attrib_name: 'tasks_executed', value: (tasks.nil? ? [] : tasks) << { name: e.name, time: Time.now.strftime('%c') })
+    #   @store.save
+    # end
 
   end
 
