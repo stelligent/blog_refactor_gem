@@ -4,7 +4,7 @@ module Build::Commit
       run_foodcritic
     end
     def run_foodcritic
-      
+      puts "TODO: run foodcritic"
     end
   end
 end
