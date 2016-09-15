@@ -18,6 +18,8 @@ module Build
             params[var.to_sym] = ENV[var] || 'subnet-c5a76a8c,subnet-3b233a06'
           when 'aws_azs'
             params[var.to_sym] = ENV[var] || 'us-east-1c,us-east-1b'
+          when 'working_directory'
+            params[var.to_sym] = ENV[var] || '.working'
           else
             params[var.to_sym] = ENV[var] || fail(ERROR_MESSAGE % [var])
           end
