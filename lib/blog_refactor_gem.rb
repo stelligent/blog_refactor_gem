@@ -1,4 +1,5 @@
 require 'blog_refactor_gem/version'
+require 'blog_refactor_gem/logger'
 require 'store/pipeline_store_emulator'
 require 'steps/acceptance/automated_testing'
 require 'steps/acceptance/environment_configuration'
