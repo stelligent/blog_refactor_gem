@@ -1,3 +1,5 @@
+require 'aws-sdk-core'
+
 module BlogRefactorGem
   module Utils
     module CFN
