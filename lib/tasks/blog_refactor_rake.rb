@@ -1,8 +1,5 @@
 require_relative '../store/pipeline_store_emulator'
-require_relative '../steps/all_steps'
-
-# TODO: Split steps into their own files
-# Dir.glob(File.dirname(File.absolute_path(__FILE__)) + '/steps/*', &method(:require))
+Dir.glob(File.dirname(File.absolute_path(__FILE__)) + '/steps/**/*', &method(:require))
 
 def define_task(description, *args, &block)
   desc description
