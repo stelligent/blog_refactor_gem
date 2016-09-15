@@ -36,6 +36,8 @@ end
       @store.put(attrib_name: 'tasks_executed', value: (tasks.nil? ? [] : tasks) << { name: e.name, time: Time.now.strftime('%c') })
       @store.save
     end
+
+    @store.save
   end
 
   # apply a built-in dependency to lazily-instantiate the store

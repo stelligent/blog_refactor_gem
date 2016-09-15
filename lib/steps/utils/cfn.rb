@@ -24,7 +24,7 @@ module BlogRefactorGem
         cfn.create_stack(options)
 
         begin
-          cfn.wait_until(:stack_create_complete, stack_name: name)
+          cfn.wait_until(:stack_create_complete, stack_name: name).stacks.first
         rescue Aws::Waiters::Errors::FailureStateError => error
           raise error
         end
