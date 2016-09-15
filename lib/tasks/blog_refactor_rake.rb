@@ -1,5 +1,10 @@
 require_relative '../store/pipeline_store_emulator'
-Dir.glob(File.dirname(File.absolute_path(__FILE__)) + '/steps/**/*', &method(:require))
+require_relative '../steps/acceptance/automated_testing'
+require_relative '../steps/acceptance/environment_configuration'
+require_relative '../steps/acceptance/environment_creation'
+require_relative '../steps/commit/scm_polling'
+require_relative '../steps/commit/static_analysis'
+require_relative '../steps/commit/unit_testing'
 
 def define_task(description, *args, &block)
   desc description

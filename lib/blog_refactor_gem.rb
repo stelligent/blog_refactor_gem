@@ -1,5 +1,8 @@
 require 'blog_refactor_gem/version'
 require 'store/pipeline_store_emulator'
-Dir[File.join(".", "steps/**/*.rb")].each do |f|
-  require f
-end
+require 'steps/acceptance/automated_testing'
+require 'steps/acceptance/environment_configuration'
+require 'steps/acceptance/environment_creation'
+require 'steps/commit/scm_polling'
+require 'steps/commit/static_analysis'
+require 'steps/commit/unit_testing'
