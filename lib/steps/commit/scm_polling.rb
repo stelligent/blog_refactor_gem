@@ -8,7 +8,7 @@ module Build
       def initialize(store:)
         app_name = ENV['app_name'] || fail(ERROR_MESSAGE % ['app_name'])
         repository_url = ENV['repository_url'] || fail(ERROR_MESSAGE % ['repository_url'])
-        repository_branch = ['repository_branch'] || fail(ERROR_MESSAGE % ['repository_branch'])
+        repository_branch = ENV['repository_branch'] || fail(ERROR_MESSAGE % ['repository_branch'])
         working_directory = ENV['workspace'] || '.workspace'
         aws_region = ENV['aws_region'] || 'us-east-1'
         aws_vpc = ENV['aws_vpc'] || 'vpc-857a3ee2'
