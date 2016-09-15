@@ -4,6 +4,7 @@ module Build
   module Commit
     # Assumes certain environment variables, typically set by your CI/CD tool, exist as parameters.
     class ScmPolling
+      include BlogRefactorGem::Logger
       ERROR_MESSAGE = 'Ensure the %s environment variable exists'
 
       def initialize(store:)
