@@ -8,12 +8,11 @@ module Build
           app_name: params[:app_name]
         )
       end
-      
+
       def execute_foodcritic(working_directory:, app_name:)
         Dir.chdir(working_directory) do
           puts "Running foodcritic on pipelines/cookbooks/#{app_name}..."
-          result = `foodcritic -t ~FC001 "pipelines/cookbooks/#{app_name}" -P`
-          puts result
+          `foodcritic -t ~FC001 "pipelines/cookbooks/#{app_name}" -P`
         end
       end
     end
