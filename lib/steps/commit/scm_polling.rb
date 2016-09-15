@@ -28,7 +28,7 @@ module Build
         end
 
         FileUtils.rm_r(params[:working_directory]) if File.directory?(params[:working_directory])
-        git_cmd = "git clone --branch #{repository_branch} --depth 1 #{repository_url} #{working_directory}"
+        git_cmd = "git clone --branch #{params[:repository_branch]} --depth 1 #{params[:repository_url]} #{params[:working_directory]}"
         system(git_cmd)
 
         store.put(attrib_name: "params", value: params)
