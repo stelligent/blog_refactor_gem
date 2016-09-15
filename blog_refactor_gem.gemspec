@@ -25,12 +25,7 @@ Gem::Specification.new do |spec|
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
   spec.bindir        = "exe"
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
-
-  include_files = []
-  Dir[File.join(".", "lib/**/*.rb")].each do |f|
-    include_files.push(f)
-  end
-  spec.require_paths = include_files
+  spec.require_paths = ["lib", "lib/tasks", "lib/steps", "lib/store", "/lib/steps/commit", "/lib/steps/acceptance"]
 
   spec.add_runtime_dependency "rake", "~> 10.0"
 
