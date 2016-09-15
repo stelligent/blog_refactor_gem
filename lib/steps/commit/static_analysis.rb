@@ -2,10 +2,19 @@ module Build
   module Commit
     class StaticAnalysis
       def initialize(store:)
-        run_foodcritic
+        params = store.get(attrib_name: "params")
+        execute_foodcritic(
+          working_directory: params[:working_directory],
+          app_name: params[:app_name]
+        )
       end
-      def run_foodcritic
-        puts "TODO: run foodcritic"
+      
+      def execute_foodcritic(working_directory:, app_name:)
+        Dir.chdir(working_directory) do
+          puts "Running foodcritic on pipelines/cookbooks/#{app_name}..."
+          result = `foodcritic -t ~FC001 "pipelines/cookbooks/#{app_name}" -P`
+          puts result
+        end
       end
     end
   end
