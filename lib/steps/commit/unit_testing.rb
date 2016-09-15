@@ -2,7 +2,7 @@ module Build
   module Commit
     class UnitTesting
       def initialize(store:)
-        # dummy step
+        puts "UnitTesting is not implemented for this pipeline."
       end
     end
   end

@@ -8,7 +8,7 @@ module Build
 
       def initialize(store:)
         params = {}
-        %w{app_name repository_url repository_branch working_directory aws_region aws_vpc aws_subnets aws_azs aws_keypair}.each do |var|
+        %w{app_name repository_url repository_branch working_directory aws_region aws_vpc aws_subnets aws_azs aws_keypair app_port}.each do |var|
           case var
           when 'aws_region'
             params[var.to_sym] = ENV[var] || 'us-east-1'
@@ -22,6 +22,8 @@ module Build
             params[var.to_sym] = ENV[var] || 'master'
           when 'working_directory'
             params[var.to_sym] = ENV[var] || '.working'
+          when 'app_port'
+            params[var.to_sym] = ENV[var] || '80'
           else
             params[var.to_sym] = ENV[var] || fail(ERROR_MESSAGE % [var])
           end

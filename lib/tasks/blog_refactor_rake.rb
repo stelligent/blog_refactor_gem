@@ -5,6 +5,7 @@ require_relative '../steps/acceptance/environment_creation'
 require_relative '../steps/commit/scm_polling'
 require_relative '../steps/commit/static_analysis'
 require_relative '../steps/commit/unit_testing'
+require_relative '../steps/utils/cfn'
 
 def define_task(description, *args, &block)
   desc description
@@ -35,7 +36,6 @@ end
       @store.put(attrib_name: 'tasks_executed', value: (tasks.nil? ? [] : tasks) << { name: e.name, time: Time.now.strftime('%c') })
       @store.save
     end
-
   end
 
   # apply a built-in dependency to lazily-instantiate the store
