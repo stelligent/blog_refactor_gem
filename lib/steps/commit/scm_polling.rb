@@ -2,9 +2,8 @@ require 'fileutils'
 
 module Build
   module Commit
-    # Assumes certain environment variables, typically set by your CI/CD tool, exist as parameters.
+    # Assumes certain environment variables exist (typically set by your CI/CD tool or sourced).
     class ScmPolling
-      include BlogRefactorGem::Logger
       ERROR_MESSAGE = 'Ensure the %s environment variable exists'
 
       def initialize(store:)
