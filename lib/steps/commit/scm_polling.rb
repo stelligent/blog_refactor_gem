@@ -33,9 +33,7 @@ module Build
         FileUtils.rm_r(params[:working_directory]) if File.directory?(params[:working_directory])
 
         puts "Cloning the repository..."
-        output = `git clone --branch #{params[:repository_branch]} --depth 1 #{params[:repository_url]} #{params[:working_directory]}`
-        fail 'Unable to clone repository' if output.empty?
-        puts output
+        `git clone --branch #{params[:repository_branch]} --depth 1 #{params[:repository_url]} #{params[:working_directory]}`
 
         store.put(attrib_name: "params", value: params)
         store.save
