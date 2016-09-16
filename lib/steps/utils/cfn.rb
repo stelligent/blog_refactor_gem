@@ -3,7 +3,7 @@ require 'aws-sdk-core'
 module BlogRefactorGem
   module Utils
     module Cfn
-      def get_stack(region:, name:)
+      def Cfn.get_stack(region:, name:)
         begin
           return Aws::CloudFormation::Client.new(region: region).describe_stacks(stack_name: name).stacks.first
         rescue Aws::CloudFormation::Errors::ValidationError
@@ -11,7 +11,7 @@ module BlogRefactorGem
         end
       end
 
-      def put_stack(region:, name:, template_url:, parameters:, tags:)
+      def Cfn.put_stack(region:, name:, template_url:, parameters:, tags:)
         required_options = {
           stack_name: name,
           template_url: template_url,
