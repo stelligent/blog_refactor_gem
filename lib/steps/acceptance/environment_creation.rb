@@ -1,12 +1,14 @@
+require_relative '../utils/cfn'
+
 module Build
   module Acceptance
     class EnvironmentCreation
+      include BlogRefactorGem::Utils::Cfn
+
       def initialize(store:)
         params = store.get(attrib_name: 'params')
         stack_info = create_stack(params: params)
         params[:elb_dns_name] = stack_info.outputs.select { |output| output[:output_key] == "DNSName" }[0][:output_value]
-
-        store.save
       end
 
       def create_stack(params:)
