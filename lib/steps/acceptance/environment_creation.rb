@@ -14,7 +14,7 @@ module Build
       def create_stack(params:)
         BlogRefactorGem::Utils::Cfn.put_stack(
           region: params[:aws_region],
-          name: params[:rds_stackname],
+          name: params[:asg_stack_name],
           template_url: 'https://s3.amazonaws.com/stelligent-blog/chefjson/templates/deploy-app.template.json',
           parameters: {
             VpcId: params[:aws_vpc],
