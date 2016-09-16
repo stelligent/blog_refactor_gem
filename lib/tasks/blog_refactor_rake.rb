@@ -6,6 +6,7 @@ require_relative '../steps/commit/scm_polling'
 require_relative '../steps/commit/static_analysis'
 require_relative '../steps/commit/unit_testing'
 require_relative '../steps/utils/cfn'
+require_relative '../steps/utils/cmd'
 
 def define_task(description, *args, &block)
   desc description
