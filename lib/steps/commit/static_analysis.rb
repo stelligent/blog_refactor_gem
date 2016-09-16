@@ -16,10 +16,9 @@ module Build
       def execute_foodcritic(working_directory:, app_name:)
         Dir.chdir(working_directory) do
           puts "Running foodcritic on pipelines/cookbooks/#{app_name}..."
-          output = BlogRefactorGem::Utils::Cmd.execute_shell(
+          puts BlogRefactorGem::Utils::Cmd.execute_shell(
             command: "foodcritic -t ~FC001 'pipelines/cookbooks/#{app_name}' -P"
           )
-          puts output
         end
       end
     end
