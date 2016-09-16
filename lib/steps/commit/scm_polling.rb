@@ -33,9 +33,11 @@ module Build
         FileUtils.rm_r(params[:working_directory]) if File.directory?(params[:working_directory])
 
         puts "Cloning the repository..."
-        puts BlogRefactorGem::Utils::Cmd.execute_shell(
-          command: "git clone --branch #{params[:repository_branch]} --depth 1 #{params[:repository_url]} #{params[:working_directory]}"
-        )
+        # puts BlogRefactorGem::Utils::Cmd.execute_shell(
+        #   command: "git clone --branch #{params[:repository_branch]} --depth 1 #{params[:repository_url]} #{params[:working_directory]}"
+        # )
+
+        puts `git clone --branch #{params[:repository_branch]} --depth 1 #{params[:repository_url]} #{params[:working_directory]}`
 
         store.put(attrib_name: "params", value: params)
         store.save
