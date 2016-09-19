@@ -1,6 +1,5 @@
 module Build
   module Acceptance
-    # Caller MUST override this step!
     class EnvironmentConfiguration
       def initialize(store:)
         fail 'This class MUST be inherited in order to support your custom configuration' unless EnvironmentConfiguration.descendants.any?
