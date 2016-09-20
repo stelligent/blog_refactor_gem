@@ -16,6 +16,7 @@ end
 # this assumes a pipeline-scoped param store is required by every pipeline step
 define_task('Lazy-initialization of param-store; required by all steps', :setup_store) do
   @store = BlogRefactorGem::PipelineStoreEmulator.new(json_file: @store_path) if @store.nil?
+  @store.put(attrib_name: 'metadata', value: @meta) if @store.get(attrib_name: 'metadata').nil?
 end
 
 @meta[:steps].each do |step|
