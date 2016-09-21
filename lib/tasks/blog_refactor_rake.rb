@@ -1,10 +1,13 @@
 require_relative '../store/pipeline_store_emulator'
-require_relative '../steps/acceptance/automated_testing'
-require_relative '../steps/acceptance/environment_configuration'
-require_relative '../steps/acceptance/environment_creation'
+
 require_relative '../steps/commit/scm_polling'
 require_relative '../steps/commit/static_analysis'
 require_relative '../steps/commit/unit_testing'
+
+require_relative '../steps/acceptance/automated_testing'
+require_relative '../steps/acceptance/app_prerequisites'
+require_relative '../steps/acceptance/app_deployment'
+
 require_relative '../steps/utils/cfn'
 require_relative '../steps/utils/cmd'
 
@@ -16,7 +19,6 @@ end
 # this assumes a pipeline-scoped param store is required by every pipeline step
 define_task('Lazy-initialization of param-store; required by all steps', :setup_store) do
   @store = BlogRefactorGem::PipelineStoreEmulator.new(json_file: @store_path) if @store.nil?
-  @store.put(attrib_name: 'metadata', value: @meta) if @store.get(attrib_name: 'metadata').nil?
 end
 
 @meta[:steps].each do |step|

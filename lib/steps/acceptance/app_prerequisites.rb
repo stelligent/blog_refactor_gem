@@ -1,8 +1,8 @@
 module Build
   module Acceptance
-    class EnvironmentConfiguration
+    class AppPrerequisites
       def initialize(store:)
-        fail 'This class MUST be inherited in order to support your custom configuration' unless EnvironmentConfiguration.descendants.any?
+        fail 'This class MUST be inherited in order to support your custom configuration' unless AppPrerequisites.descendants.any?
       end
 
       def self.descendants

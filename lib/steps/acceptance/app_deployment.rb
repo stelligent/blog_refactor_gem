@@ -2,7 +2,7 @@ require_relative '../utils/cfn'
 
 module Build
   module Acceptance
-    class EnvironmentCreation
+    class AppDeployment
       include BlogRefactorGem::Utils::Cfn
 
       def initialize(store:)
